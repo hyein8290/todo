@@ -1,11 +1,13 @@
 package todo.todoback;
 
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import todo.todoback.repository.JdbcTodoRepository;
+import todo.todoback.repository.JpaTodoRepository;
 import todo.todoback.repository.TodoRepository;
 import todo.todoback.service.TodoService;
 
@@ -13,9 +15,11 @@ import todo.todoback.service.TodoService;
 public class SpringConfig {
 	
 	private final DataSource dataSource;
+	private final EntityManager em;
 	
-	public SpringConfig(DataSource dataSource) {
+	public SpringConfig(DataSource dataSource, EntityManager em) {
 		this.dataSource = dataSource;
+		this.em = em;
 	}
 
 	@Bean
@@ -25,6 +29,7 @@ public class SpringConfig {
 	
 	@Bean
 	public TodoRepository todoRepository() {
-		return new JdbcTodoRepository(dataSource);
+		//return new JdbcTodoRepository(dataSource);
+		return new JpaTodoRepository(em);
 	}
 }

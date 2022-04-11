@@ -15,7 +15,6 @@ public class TodoController {
 	
 	private final TodoService todoService;
 	
-	@Autowired
 	public TodoController(TodoService todoService) {
 		this.todoService = todoService;
 	}
