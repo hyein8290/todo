@@ -12,7 +12,6 @@ public class Todo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String content;
-//	private Integer completed;
 	private Boolean completed;
 	
 	public Boolean getCompleted() {
@@ -38,13 +37,5 @@ public class Todo {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
-//	public Integer getCompleted() {
-//		return completed;
-//	}
-//	
-//	public void setCompleted(Integer completed) {
-//		this.completed = completed;
-//	}
 	
 }

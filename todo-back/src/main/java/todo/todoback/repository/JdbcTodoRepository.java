@@ -39,6 +39,7 @@ public class JdbcTodoRepository implements TodoRepository {
 			List<Todo> todos = new ArrayList<>();
 			while(rs.next()) {
 				Todo todo = new Todo();
+				
 				todo.setId(rs.getLong("id"));
 				todo.setContent(rs.getString("content"));
 				
@@ -48,7 +49,6 @@ public class JdbcTodoRepository implements TodoRepository {
 					todo.setCompleted(false);
 				}
 				
-//				todo.setCompleted(rs.getInt("completed"));
 				todos.add(todo);
 			}
 			
