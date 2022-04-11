@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+	<div>
+		<table>
+			<thead>
+			<tr>
+				<th>아이디</th>
+				<th>할 일</th>
+				<th>완료여부</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:each="todo : ${todos}">
+				<td th:text="${todo.id}"></td>
+				<td th:text="${todo.content}"></td>
+				<td th:text="${todo.completed}"></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>
