@@ -14,7 +14,7 @@ public class JpaTodoRepository implements TodoRepository {
 
 	@Override
 	public List<Todo> findAll() {
-		return em.createQuery("select t from todo t", Todo.class).getResultList();
+		return em.createQuery("select t from Todo t", Todo.class).getResultList();
 	}
 
 }
