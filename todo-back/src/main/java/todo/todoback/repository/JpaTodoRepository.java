@@ -18,4 +18,10 @@ public class JpaTodoRepository implements TodoRepository {
 		return em.createQuery("select t from Todo t", Todo.class).getResultList();
 	}
 
+	@Override
+	public Todo save(Todo todo) {
+		em.persist(todo);
+		return todo;
+	}
+
 }
